@@ -15,7 +15,7 @@ class _01_StringMethodsTest {
 
     @Test
     void testFormatSpaces() {
-        assertEquals("This String should not chage", _01_StringMethods.formatSpaces("This String should not chage"));
+        assertEquals("This String should not change", _01_StringMethods.formatSpaces("This String should not change"));
         assertEquals("This_String_should_have_its_spaces_filled_with_underscores", _01_StringMethods.formatSpaces("This String should have its spaces filled with underscores"));
         assertEquals("x_x_x_x_x_x_x_underscores_x_x_x_x_x_x", _01_StringMethods.formatSpaces("x x x x x x x underscores x x x x x x"));
     }
@@ -23,7 +23,6 @@ class _01_StringMethodsTest {
     @Test 
     void testLineLeader() {
         assertEquals("John A", _01_StringMethods.lineLeader("John C", "John B", "John A"));
-        assertEquals("John A", _01_StringMethods.lineLeader("           John A  ", " John C   ", "     John B "));
         assertEquals("Charley F", _01_StringMethods.lineLeader("  Allison Z", " Charley F ", " Brad H "));
     }
 
