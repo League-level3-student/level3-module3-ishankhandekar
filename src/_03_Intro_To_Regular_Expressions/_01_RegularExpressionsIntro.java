@@ -18,6 +18,6 @@ public class _01_RegularExpressionsIntro {
      */
     String emailRemover(String message) {
     	
-        return message.replaceAll("new", "");
+        return message.replaceAll("[a-z.]", "mail.com");
     }
 }
