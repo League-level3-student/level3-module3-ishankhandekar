@@ -106,40 +106,70 @@ public class _01_StringMethods {
     	int i = 0;
     	while (s.indexOf(substring,i) != -1) {
 			count++;
-			i++;
+			i = s.indexOf(substring,i) + 1;
+			
+			
 		}
-        return 0;
+        return count;
     }
 
     // Call Utilities.encrypt at the bottom of this file to encrypt String s
     public static String encrypt(String s, char key) {
-        return null;
+    	
+        return Utilities.encrypt(s.getBytes(), (byte)key);
     }
 
     // Call Utilities.decrypt at the bottom of this file to decrypt the
     // cyphertext (encrypted text)
     public static String decrypt(String s, char key) {
-        return null;
+        return Utilities.decrypt(s, (byte)key);
     }
 
     // Return the number of words in String s that end with String substring
     // You can assume there are no punctuation marks between words
     public static int wordsEndsWithSubstring(String s, String substring) {
-        return 0;
+    	String[] splitWords = s.split(" ");
+    	int count=0;
+    	for (String string : splitWords) {
+			if (string.endsWith(substring) == true) {
+				count++;
+			}
+		}
+    	return count;
     }
 
     // Given String s, return the number of characters between the first
     // occurrence of String substring and the final occurrence
     // You can assume that substring will appear at least twice
     public static int distance(String s, String substring) {
-        return 0;
+        return s.lastIndexOf(substring) - (s.indexOf(substring) + substring.length());
     }
 
     // Return true if String s is a palindrome
     // palindromes are words or phrases are read the same forward as backward.
     // HINT: ignore/remove all punctuation and spaces in the String
     public static boolean palindrome(String s) {
-        return true;
+    	s=s.replace(" ", "");
+    	s=s.replace(",", "");
+    	s=s.replace(".", "");
+    	s=s.replace("-", "");
+    	s=s.replace(":", "");
+    	s=s.replace("?", "");
+    	s=s.toLowerCase();
+    	String newString = "";
+    	char ch;
+    	 for (int i=0; i<s.length(); i++)
+         {
+           ch= s.charAt(i); //extracts each character
+           newString= ch+newString; //adds each character in front of the existing string
+         }
+    	
+          if (newString.equals(s) ) {
+			return true;
+		}else {
+			return false;
+		}
+       
     }
 }
 
